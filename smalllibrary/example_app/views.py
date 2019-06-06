@@ -22,3 +22,7 @@ def logoutView(request):
     logout(request)
     return redirect('home')
 
+
+
+def add_book(request):
+    return render(request,"example_app/add_book.html")

@@ -5,7 +5,7 @@ from django.contrib.auth import logout
 
 @login_required
 def auth_page(request):
-    return render(request, 'book/auth_page.html')
+    return render(request, 'auth_page.html')
 
 def home(request):
     context = dict()
@@ -15,7 +15,7 @@ def home(request):
     else:
         context['greeting'] = 'Welcome Anonymous'
 
-    return render(request, 'book/home.html', context)
+    return render(request, 'home.html', context)
 
 @login_required
 def logoutView(request):

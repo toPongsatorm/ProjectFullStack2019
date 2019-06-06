@@ -21,3 +21,4 @@ def home(request):
 def logoutView(request):
     logout(request)
     return redirect('home')
+

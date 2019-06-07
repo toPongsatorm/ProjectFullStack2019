@@ -1,0 +1,63 @@
+<html>
+
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<title>list Item</title>
+    </head>
+    <body>
+        <!--<br><thead>
+        <tr>
+            <th>Name</th>
+            <th>Amount</th>
+            <th>Price</th>
+            <th>Category</th>
+            </tr>
+        </thead></br>
+
+        <tbody>
+        {% for item in items %}
+        <tr>
+        <td>{{ item.name}}</td>
+      <td> {{item.amount}}</td>
+       <td>{{ item.price}}</td>
+        <td>{{item.category }}</td>
+        </tr>
+        </tbody>
+        {% endfor%}
+        <p>Render List Item</p>-->
+        <div class="container">
+                <h2>data</h2>
+                <p>The .table-hover class enables a hover state on table rows:</p>            
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th>Title</th>
+                      <th>inbs</th>
+                      <th>aut</th>
+                      <th>bid</th>
+                      <th>year</th>
+                      <th>pub</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                        {% for book in book %}
+                    <tr>
+                      <td>{{book.title}}</td>
+                      <td>{{item.ISBN}}</td>
+                      <td>{{ item.price}}</td>
+                      <td>{{item.category }}</td>
+                   <!--<td><a href="{% url 'edit_item' item.id%}">Edit</a><td>-->
+                   
+                    </tr>
+                    
+                  </tbody>
+                  {% endfor%}
+                </table>
+                <a href="{% url 'add_item' %}">เพิ่มข้อมูล</a>
+              </div>
+        </body>
+</html>

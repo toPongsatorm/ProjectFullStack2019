@@ -30,6 +30,8 @@
         
         </style>
     <body>
+
+         
             <nav class="uk-navbar-container" uk-navbar>
                     <div class="uk-navbar-left">
                 
@@ -45,7 +47,9 @@
                                                         <a href="{% url 'social:begin' 'tu' %}">Log in</a>
                                                     {% else %}</li>
                                                 <li> <a href="{% url 'book:auth_page' %}">Go to auth page</a></li>
+                                                <li> <a href="{% url 'book:sent' %}">คืน</a></li>
                                                 <li class="uk-nav-header"> <a href="{% url 'book:logout' %}">Log out</a></li>
+
                                                 {% endif %}
                                                 <li><a href="#product" uk-scroll>product</a></li>
                                                 

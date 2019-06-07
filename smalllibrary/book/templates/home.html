@@ -1,11 +1,88 @@
 <html>
+    <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+         
+            <!-- UIkit CSS -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/css/uikit.min.css" />
+            {% load static %}
+            <!-- UIkit JS -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/js/uikit.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/js/uikit-icons.min.js"></script>
+            <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        </head>
+        <style>
+        .bgimg-1 {
+            background-image: url('{% static "images/janko.jpg" %}');
+            min-width: 100%;
+            min-height: 100%;
+
+             ;
+}
+        
+        </style>
     <body>
-        <p>{{ greeting }}</p>
-        {% if user.is_anonymous %}
-            <a href="{% url 'social:begin' 'tu' %}">Log in</a>
-        {% else %}
-            <a href="{% url 'book:auth_page' %}">Go to auth page</a>
-            <a href="{% url 'book:logout' %}">Log out</a>
-        {% endif %}
+            <nav class="uk-navbar-container" uk-navbar>
+                    <div class="uk-navbar-left">
+                
+                        <ul class="uk-navbar-nav">
+                            <li>
+                                <a href="#" style="font-family: 'Into Light', cursive;" >TU menu</a>
+                                <div class="uk-navbar-dropdown uk-navbar-dropdown-width-2">
+                                    <div class="uk-navbar-dropdown-grid uk-child-width-1-2" uk-grid>
+                                        <div>
+                                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                                    <p>{{ greeting }}</p>
+                                                <li class="uk-active">  {% if user.is_anonymous %}
+                                                        <a href="{% url 'social:begin' 'tu' %}">Log in</a>
+                                                    {% else %}</li>
+                                                <li> <a href="{% url 'book:auth_page' %}">Go to auth page</a></li>
+                                                <li class="uk-nav-header"> <a href="{% url 'book:logout' %}">Log out</a></li>
+                                                {% endif %}
+                                                <li><a href="#product" uk-scroll>product</a></li>
+                                                
+                                            </ul>
+                                        </div>
+                                      
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                
+                    </div>
+                </nav>
+
+                <!-- First Parallax Image with Logo Text -->
+        <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+    <div class="w3-display-middle" style="white-space:nowrap;">
+      <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">TU <span class="w3-hide-small">LIBRARY</span> LOGO</span>
+    </div>
+            </div>
+             
+        
+
+                <div id="About" class="uk-section uk-section-primary uk-preserve-color">
+                        <div class="uk-container">
+                    
+                            <div class="uk-panel uk-light uk-margin-medium">
+                                    <h1 class="uk-heading-line uk-text-center "style="font-family: 'Indie Flower', cursive;"><span>About Us</span></h1>
+                            </div>
+                    
+                            <div class="uk-grid-match uk-child-width-expand@m" uk-grid>
+                               <p style="font-family: 'Into Light', cursive;" class="uk-dropcap uk-light">Dorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>
+                    
+                        </div>
+                    </div>
+                
+       
     </body>
 </html>

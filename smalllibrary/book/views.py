@@ -12,11 +12,6 @@ def list_item(request):
     context['Book'] = Book.objects.all().order_by('Book')
     return render(request,'listitem.html',context)
 
-
-
-
-
-
 @login_required
 def auth_page(request):
     return render(request, 'auth_page.html')
@@ -40,7 +35,7 @@ def sent(request,pk):
         if request.method =='POST':
                 try:
                     book = Book.objects.get(pk=pk)
-                    status = int(request.POST['amount'])
+                    status = int(request.POST['satatus'])
                     book.status -1
                     book.save()
                     Transaction.objects.create(

@@ -1,5 +1,7 @@
 from django.db import models
 
+
+
 # Create your models here.
 class Borrow(models.Model):
     borrower = models.CharField(max_length=255)  
@@ -37,5 +39,3 @@ class Transaction(models.Model):
 
     def __str__(self):
         return self.book
-
-

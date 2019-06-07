@@ -17,5 +17,3 @@ admin.site.register(Binding,BindingAdmin)
 class TransactionAdmin(admin.ModelAdmin):
     list_display = [f.name for f in Transaction._meta.fields]
 admin.site.register(Transaction,TransactionAdmin)
-
-

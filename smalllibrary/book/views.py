@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 from .models import Book,Transaction
-from .form import ItemForm
+from .forms import ItemForm
 # Create your views here.
 
 
@@ -36,10 +36,10 @@ def logoutView(request):
     logout(request)
     return redirect('home')
 
-def sent(request,pks):
+def sent(request,pk):
         if request.method =='POST':
                 try:
-                    book = Book.objects.get(pk=pks)
+                    book = Book.objects.get(pk=pk)
                     status = int(request.POST['amount'])
                     book.status -1
                     book.save()
@@ -52,6 +52,10 @@ def sent(request,pks):
                         print(e)
                         return e
         else:
-                book =Book.objects.get(pk=pks)
-                context = {'book':book}
+                book =Book.objects.get(pk=pk)
+                form = ItemForm(instance=book)
+                context = {
+                        'book':book,
+                        'form': form
+                }
                 return render(request,'sent.html',context)
